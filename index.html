@@ -1,259 +1,1350 @@
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biodata Diri</title>
-  <style>
+  <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.profile-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 15px;
-    border: 3px solid white;
-}
-    
-    :root {
-      --primary-color: #1e3a8a;
-      --secondary-color: #3b82f6;
-      --bg-color: #f8fafc;
-      --card-bg: #ffffff;
-      --text-color: #334155;
-      --border-color: #e2e8f0;
-    }
+    <title>Website Deswinta Maharani</title>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    <style>
 
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .container {
-      background-color: var(--card-bg);
-      width: 100%;
-      max-width: 700px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      border: 1px solid var(--border-color);
-    }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eef3f8;
+            color: #334155;
+            transition: 0.3s;
+        }
 
-    .header {
-      background-color: var(--primary-color);
-      color: #ffffff;
-      padding: 30px 20px;
-      text-align: center;
-    }
+        /* ================= NAVBAR ================= */
 
-    .header h1 {
-      font-size: 1.8rem;
-      letter-spacing: 1px;
-      margin-bottom: 5px;
-      text-transform: uppercase;
-    }
+        nav {
+            background: #173b83;
+            height: 58px;
+            padding: 0 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
 
-    .header p {
-      font-size: 0.95rem;
-      opacity: 0.85;
-    }
+        .logo {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
 
-    .content {
-      padding: 30px;
-    }
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
-    .section-title {
-      font-size: 1.2rem;
-      color: var(--primary-color);
-      border-bottom: 2px solid var(--secondary-color);
-      padding-bottom: 8px;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
-    .info-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 30px;
-    }
+        .menu a:hover {
+            color: #bcd8ff;
+        }
 
-    .info-table td {
-      padding: 10px 8px;
-      vertical-align: top;
-      font-size: 0.95rem;
-    }
+        .dark-button {
+            border: none;
+            background: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 14px;
+        }
 
-    .info-table tr:nth-child(even) {
-      background-color: #f8fafc;
-    }
 
-    .label {
-      font-weight: 600;
-      width: 35%;
-      color: #1e293b;
-    }
+        /* ================= HALAMAN ================= */
 
-    .separator {
-      width: 5%;
-      text-align: center;
-    }
+        .page {
+            display: none;
+            min-height: calc(100vh - 58px);
+        }
 
-    .value {
-      width: 60%;
-    }
+        .page.active {
+            display: block;
+        }
 
-    .education-list {
-      list-style: none;
-      position: relative;
-      padding-left: 20px;
-    }
 
-    .education-list::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 5px;
-      bottom: 5px;
-      width: 2px;
-      background-color: var(--secondary-color);
-    }
+        /* ================= HOME ================= */
 
-    .education-item {
-      position: relative;
-      margin-bottom: 20px;
-    }
+        .hero {
+            width: 100%;
+            min-height: 390px;
+            background: linear-gradient(
+                135deg,
+                #eaf4ff,
+                #d7e9ff
+            );
 
-    .education-item:last-child {
-      margin-bottom: 0;
-    }
+            position: relative;
+            overflow: hidden;
+        }
 
-    .education-item::before {
-      content: '';
-      position: absolute;
-      left: -25px;
-      top: 5px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: var(--primary-color);
-      border: 2px solid #ffffff;
-    }
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            border: 2px solid rgba(72, 139, 220, 0.15);
+            border-radius: 50%;
+            left: -100px;
+            bottom: -110px;
+        }
 
-    .edu-level {
-      font-weight: 600;
-      font-size: 1rem;
-      color: #0f172a;
-    }
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 190px;
+            height: 190px;
+            border: 2px solid rgba(72, 139, 220, 0.15);
+            border-radius: 50%;
+            right: -80px;
+            top: -90px;
+        }
 
-    .edu-name {
-      font-size: 0.95rem;
-      color: #475569;
-      margin-top: 2px;
-    }
+        .hero-content {
+            max-width: 1050px;
+            min-height: 390px;
+            margin: auto;
+            padding: 50px;
 
-    .edu-years {
-      font-size: 0.85rem;
-      color: #64748b;
-      margin-top: 2px;
-    }
+            display: flex;
+            align-items: center;
+            gap: 45px;
 
-    .footer {
-      background-color: #f1f5f9;
-      padding: 15px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #64748b;
-      border-top: 1px solid var(--border-color);
-    }
-  </style>
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* ================= FOTO ================= */
+
+        .profile-img {
+            width: 175px;
+            height: 175px;
+            object-fit: cover;
+
+            border-radius: 50%;
+            border: 5px solid white;
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,0.18);
+
+            flex-shrink: 0;
+        }
+
+
+        /* ================= PROFIL ================= */
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            color: #21468f;
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        .hero-text h2 {
+            color: #3371ca;
+            font-size: 18px;
+            margin-bottom: 14px;
+        }
+
+        .hero-text p {
+            color: #64748b;
+            line-height: 1.7;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+
+        /* ================= TOMBOL ================= */
+
+        .button {
+            display: inline-block;
+            background: #2775e8;
+            color: white;
+
+            padding: 10px 20px;
+
+            border-radius: 25px;
+            text-decoration: none;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background: #173b83;
+            transform: translateY(-2px);
+        }
+
+
+        /* ================= TULISAN SAMPING ================= */
+
+        .hero-note {
+            position: absolute;
+            right: 55px;
+            bottom: 75px;
+
+            width: 150px;
+
+            color: #64748b;
+
+            font-size: 11px;
+            line-height: 1.6;
+
+            text-align: center;
+            font-style: italic;
+
+            transform: rotate(-5deg);
+        }
+
+
+        /* ================= WELCOME ================= */
+
+        .welcome {
+            max-width: 900px;
+            margin: 35px auto 60px;
+
+            background: white;
+
+            padding: 40px 30px;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 20px rgba(0,0,0,0.07);
+        }
+
+        .welcome-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .welcome h2 {
+            color: #21468f;
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .welcome p {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.8;
+
+            max-width: 650px;
+            margin: auto auto 20px;
+        }
+
+
+        /* ================= HALAMAN DALAM ================= */
+
+        .main-container {
+            max-width: 900px;
+            margin: 40px auto 60px;
+
+            background: white;
+
+            padding: 40px 35px;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 4px 20px rgba(0,0,0,0.07);
+        }
+
+
+        /* ================= JUDUL ================= */
+
+        .section-title {
+            color: #21468f;
+
+            font-size: 18px;
+
+            margin-bottom: 15px;
+
+            padding-bottom: 7px;
+
+            border-bottom: 2px solid #7eb3ed;
+        }
+
+
+        /* ================= TENTANG ================= */
+
+        .about {
+            font-size: 13px;
+            line-height: 1.8;
+
+            color: #64748b;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* ================= BIODATA ================= */
+
+        .biodata {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            font-size: 12px;
+        }
+
+        .biodata tr:nth-child(even) {
+            background: #f0f5fa;
+        }
+
+        .biodata td {
+            padding: 11px 12px;
+        }
+
+        .biodata td:first-child {
+            width: 32%;
+            font-weight: bold;
+            color: #475569;
+        }
+
+        .biodata td:nth-child(2) {
+            width: 5%;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+
+        /* ================= CARD ================= */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .small-card {
+            background: linear-gradient(
+                145deg,
+                #f8fbff,
+                #edf4fb
+            );
+
+            border: 1px solid #dce7f2;
+
+            border-radius: 8px;
+
+            padding: 15px 8px;
+
+            text-align: center;
+
+            min-height: 115px;
+
+            transition: 0.3s;
+        }
+
+        .small-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .card-icon {
+            font-size: 27px;
+            margin-bottom: 8px;
+        }
+
+        .small-card h3 {
+            color: #21468f;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+
+        .small-card p {
+            color: #64748b;
+            font-size: 10px;
+            line-height: 1.4;
+        }
+
+
+        /* ================= PENDIDIKAN ================= */
+
+        .education {
+            position: relative;
+
+            border-left: 3px solid #4389df;
+
+            padding-left: 25px;
+
+            margin: 10px 0 30px;
+        }
+
+        .education-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 5px;
+        }
+
+        .education-item::before {
+            content: "";
+
+            position: absolute;
+
+            width: 11px;
+            height: 11px;
+
+            border-radius: 50%;
+
+            background: #2775e8;
+
+            left: -32px;
+            top: 4px;
+        }
+
+        .education-item h3 {
+            color: #21468f;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .education-item p {
+            color: #64748b;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .year {
+            color: #2775e8 !important;
+            font-weight: bold;
+        }
+
+
+        /* ================= PENGALAMAN ================= */
+
+        .experience {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+
+            margin-bottom: 30px;
+        }
+
+        .experience-card {
+            background: #f5f9fd;
+
+            border: 1px solid #dce7f2;
+
+            border-radius: 8px;
+
+            padding: 18px;
+        }
+
+        .experience-card h3 {
+            color: #21468f;
+            font-size: 13px;
+            margin-bottom: 7px;
+        }
+
+        .experience-card p {
+            color: #64748b;
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+
+        /* ================= CITA-CITA ================= */
+
+        .dream {
+            background: linear-gradient(
+                135deg,
+                #e8f3ff,
+                #f4f9ff
+            );
+
+            border-radius: 10px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            margin-bottom: 30px;
+        }
+
+        .dream-icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .dream p {
+            color: #365b91;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+
+        /* ================= KONTAK ================= */
+
+        .contact {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+
+            margin-bottom: 25px;
+        }
+
+        .contact-card {
+            background: #f5f9fd;
+
+            border: 1px solid #dce7f2;
+
+            border-radius: 8px;
+
+            text-align: center;
+
+            padding: 20px 10px;
+        }
+
+        .contact-card .icon {
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .contact-card h3 {
+            color: #21468f;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+
+        .contact-card a {
+            color: #2775e8;
+            text-decoration: none;
+            font-size: 10px;
+            word-break: break-word;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #173b83;
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+
+            font-size: 12px;
+        }
+
+
+        /* ================= DARK MODE ================= */
+
+        body.dark {
+            background: #0f172a;
+            color: #e2e8f0;
+        }
+
+        body.dark .welcome,
+        body.dark .main-container {
+            background: #1e293b;
+        }
+
+        body.dark .hero {
+            background: linear-gradient(
+                135deg,
+                #172554,
+                #1e3a8a
+            );
+        }
+
+        body.dark .hero-text h1 {
+            color: #bfdbfe;
+        }
+
+        body.dark .hero-text h2 {
+            color: #93c5fd;
+        }
+
+        body.dark .hero-text p,
+        body.dark .hero-note {
+            color: #cbd5e1;
+        }
+
+        body.dark .welcome h2 {
+            color: #93c5fd;
+        }
+
+        body.dark .welcome p {
+            color: #cbd5e1;
+        }
+
+        body.dark .section-title {
+            color: #93c5fd;
+        }
+
+        body.dark .about {
+            color: #cbd5e1;
+        }
+
+        body.dark .biodata tr:nth-child(even) {
+            background: #26364d;
+        }
+
+        body.dark .biodata td:first-child {
+            color: #dbeafe;
+        }
+
+        body.dark .small-card,
+        body.dark .experience-card,
+        body.dark .contact-card {
+            background: #26364d;
+            border-color: #334155;
+        }
+
+        body.dark .small-card h3,
+        body.dark .experience-card h3,
+        body.dark .contact-card h3,
+        body.dark .education-item h3 {
+            color: #93c5fd;
+        }
+
+        body.dark .small-card p,
+        body.dark .experience-card p,
+        body.dark .education-item p {
+            color: #cbd5e1;
+        }
+
+        body.dark .dream {
+            background: #26364d;
+        }
+
+        body.dark .dream p {
+            color: #bfdbfe;
+        }
+
+
+        /* ================= HP ================= */
+
+        @media (max-width: 768px) {
+
+            nav {
+                height: auto;
+                padding: 15px 20px;
+
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero-content {
+                min-height: 500px;
+
+                flex-direction: column;
+
+                text-align: center;
+
+                padding: 45px 25px;
+
+                gap: 25px;
+            }
+
+            .profile-img {
+                width: 140px;
+                height: 140px;
+            }
+
+            .hero-text h1 {
+                font-size: 28px;
+            }
+
+            .hero-text h2 {
+                font-size: 16px;
+            }
+
+            .hero-note {
+                display: none;
+            }
+
+            .welcome {
+                width: 94%;
+                padding: 30px 20px;
+            }
+
+            .main-container {
+                width: 94%;
+                padding: 25px 18px;
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .experience {
+                grid-template-columns: 1fr;
+            }
+
+            .contact {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 450px) {
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .biodata {
+                font-size: 11px;
+            }
+
+            .hero-text h1 {
+                font-size: 24px;
+            }
+
+        }
+
+    </style>
 </head>
+
+
 <body>
 
-  <div class="container">
-    <div class="header">
-    <img src="foto.jpeg" alt="Foto Profil" class="profile-img">
 
-    <h1>DESWINTA MAHARANI</h1>
-    <p>BIODATA DIRI</p>
-</div>
+    <!-- ================= NAVBAR ================= -->
 
-    <div class="content">
-      <!-- Data Pribadi -->
-      <h2 class="section-title">Informasi Pribadi</h2>
-      <table class="info-table">
-        <tr>
-          <td class="label">Nama Lengkap</td>
-          <td class="separator">:</td>
-          <td class="value">Deswinta Maharani</td>
-        </tr>
-        <tr>
-          <td class="label">Tempat,Tgl lahir</td>
-          <td class="separator">:</td>
-          <td class="value">Karanganyar,12-Desember-2009</td>
-        </tr>
-        <tr>
-          <td class="label">Jenis Kelamin</td>
-          <td class="separator">:</td>
-          <td class="value">Perempuan</td>
-        </tr>
-        <tr>
-          <td class="label">Alamat Lengkap</td>
-          <td class="separator">:</td>
-          <td class="value">Link.Jabalintang</td>
-        </tr>
-        <tr>
-          <td class="label">Alamat E-mail</td>
-          <td class="separator">:</td>
-          <td class="value">deswintamaharani291@gmail.com</td>
-        </tr>
-        <tr>
-          <td class="label">No. Telepon / WA</td>
-          <td class="separator">:</td>
-          <td class="value">0821-1743-7719</td>
-        </tr>
-      </table>
+    <nav>
 
-      <!-- Riwayat Pendidikan -->
-      <h2 class="section-title">Riwayat Pendidikan</h2>
-      <ul class="education-list">
-        <li class="education-item">
-          <div class="edu-level">SMK (Sekolah Menengah Kejuruan)</div>
-          <div class="edu-name">SMKN 1 CILEGON - Rekayasa perangkat lunak</div>
-          <div class="edu-years">2025 - 2028</div>
-        </li>
-        <li class="education-item">
-          <div class="edu-level">SMP (Sekolah Menengah Pertama)</div>
-          <div class="edu-name">SMPN 12 CILEGON</div>
-          <div class="edu-years">2022 - 2025</div>
-        </li>
-        <li class="education-item">
-          <div class="edu-level">SD (Sekolah Dasar)</div>
-          <div class="edu-name">SDN KRANGGOT</div>
-          <div class="edu-years">2016-2022</div>
-        </li>
-        <li class="education-item">
-          <div class="edu-level">TK (Taman Kanak-kanak)</div>
-          <div class="edu-name">TK NEGRI ISTIQOMAH KRANGGOT</div>
-          <div class="edu-years">2014 - 2016</div>
-        </li>
-      </ul>
-    </div>
+        <div class="logo">
+            DESWINTA
+        </div>
 
-    <div class="footer">
-    </div>
-  </div>
+        <div class="menu">
+
+            <a onclick="showPage('home')">Home</a>
+
+            <a onclick="showPage('biodata')">Biodata</a>
+
+            <a onclick="showPage('pendidikan')">Pendidikan</a>
+
+            <a onclick="showPage('pengalaman')">Pengalaman</a>
+
+            <a onclick="showPage('kontak')">Kontak</a>
+
+            <button
+                class="dark-button"
+                onclick="darkMode()"
+                id="darkButton"
+            >
+                🌙
+            </button>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================================================= -->
+    <!-- ================= SCREEN HOME =================== -->
+    <!-- ================================================= -->
+
+    <section id="home" class="page active">
+
+
+        <!-- ================= PROFIL ================= -->
+
+        <header class="hero">
+
+            <div class="hero-content">
+
+
+                <img
+                    src="foto.jpeg"
+                    alt="Foto Deswinta Maharani"
+                    class="profile-img"
+                >
+
+
+                <div class="hero-text">
+
+                    <h1>
+                        DESWINTA MAHARANI
+                    </h1>
+
+                    <h2>
+                        Pelajar | Rekayasa Perangkat Lunak
+                    </h2>
+
+                    <p>
+                        Selamat datang di website biodata saya.
+                        Saya adalah siswi SMK yang sedang belajar
+                        tentang teknologi, pemrograman, dan
+                        pembuatan website.
+                    </p>
+
+                    <button
+                        class="button"
+                        onclick="showPage('biodata')"
+                    >
+                        👤 Lihat Biodata
+                    </button>
+
+                </div>
+
+
+                <div class="hero-note">
+
+                    Jangan pernah berhenti belajar,
+                    karena masa depan dimulai
+                    dari hari ini ✨
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================= WELCOME ================= -->
+
+        <section class="welcome">
+
+            <div class="welcome-icon">
+                👋
+            </div>
+
+            <h2>
+                Selamat Datang di Website Deswinta
+            </h2>
+
+            <p>
+
+                Halo! Terima kasih sudah mengunjungi
+                website Deswinta. Di sini kamu bisa
+                mengenal Deswinta lebih dekat, mulai dari
+                informasi pribadi, keahlian, hobi,
+                pendidikan, hingga pengalaman.
+
+            </p>
+
+            <button
+                class="button"
+                onclick="showPage('biodata')"
+            >
+                👤 Lihat Biodata
+            </button>
+
+        </section>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- ================= SCREEN BIODATA ================ -->
+    <!-- ================================================= -->
+
+    <section id="biodata" class="page">
+
+        <div class="main-container">
+
+            <h2 class="section-title">
+                👤 Tentang Deswinta
+            </h2>
+
+            <p class="about">
+
+                Halo! Saya <b>Deswinta Maharani</b>, seorang siswi
+                SMK yang mengambil jurusan Rekayasa Perangkat Lunak.
+                Saya tertarik dengan dunia teknologi, terutama dalam
+                pembuatan website dan aplikasi sederhana. Saya senang
+                mempelajari hal baru dan mengembangkan kemampuan saya
+                di bidang teknologi.
+
+            </p>
+
+
+            <h2 class="section-title">
+                📋 Informasi Pribadi
+            </h2>
+
+            <table class="biodata">
+
+                <tr>
+                    <td>Nama Lengkap</td>
+                    <td>:</td>
+                    <td>Deswinta Maharani</td>
+                </tr>
+
+                <tr>
+                    <td>Tempat, Tgl Lahir</td>
+                    <td>:</td>
+                    <td>Karanganyar, 12 Desember 2009</td>
+                </tr>
+
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td>:</td>
+                    <td>Perempuan</td>
+                </tr>
+
+                <tr>
+                    <td>Alamat</td>
+                    <td>:</td>
+                    <td>Link. Jabalintang</td>
+                </tr>
+
+                <tr>
+                    <td>Kelas</td>
+                    <td>:</td>
+                    <td>XI RPL 1</td>
+                </tr>
+
+                <tr>
+                    <td>Jurusan</td>
+                    <td>:</td>
+                    <td>Rekayasa Perangkat Lunak</td>
+                </tr>
+
+            </table>
+
+
+            <h2 class="section-title">
+                💻 Keahlian
+            </h2>
+
+            <div class="grid">
+
+                <div class="small-card">
+                    <div class="card-icon">🌐</div>
+                    <h3>HTML</h3>
+                    <p>Dasar pembuatan website</p>
+                </div>
+
+                <div class="small-card">
+                    <div class="card-icon">🎨</div>
+                    <h3>CSS</h3>
+                    <p>Dasar tampilan website</p>
+                </div>
+
+                <div class="small-card">
+                    <div class="card-icon">🐘</div>
+                    <h3>PHP</h3>
+                    <p>Dasar pemrograman web</p>
+                </div>
+
+                <div class="small-card">
+                    <div class="card-icon">🐍</div>
+                    <h3>Python</h3>
+                    <p>Dasar pemrograman</p>
+                </div>
+
+                <div class="small-card">
+                    <div class="card-icon">🎨</div>
+                    <h3>Canva</h3>
+                    <p>Dasar desain grafis</p>
+                </div>
+
+            </div>
+
+
+            <h2 class="section-title">
+                ❤️ Hobi & Minat
+            </h2>
+
+            <div class="grid">
+
+                <div class="small-card">
+                    <div class="card-icon">🎧</div>
+                    <h3>Mendengarkan Musik</h3>
+                    <p>Menikmati berbagai genre musik</p>
+                </div>
+
+                <div class="small-card">
+                    <div class="card-icon">🎬</div>
+                    <h3>Menonton Film</h3>
+                    <p>Menonton film di waktu luang</p>
+                </div>
+
+                <div class="small-card">
+                    <div class="card-icon">💻</div>
+                    <h3>Coding</h3>
+                    <p>Belajar membuat program</p>
+                </div>
+
+                <div class="small-card">
+                    <div class="card-icon">🏔️</div>
+                    <h3>Hiking</h3>
+                    <p>Menjelajahi alam dan menikmati pemandangan</p>
+                </div>
+
+                <div class="small-card">
+                    <div class="card-icon">🎨</div>
+                    <h3>Desain</h3>
+                    <p>Membuat desain sederhana</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- ================= SCREEN PENDIDIKAN ============= -->
+    <!-- ================================================= -->
+
+    <section id="pendidikan" class="page">
+
+        <div class="main-container">
+
+            <h2 class="section-title">
+                📚 Riwayat Pendidikan
+            </h2>
+
+            <div class="education">
+
+                <div class="education-item">
+
+                    <h3>SMK</h3>
+
+                    <p>
+                        SMKN 1 CILEGON -
+                        Rekayasa Perangkat Lunak
+                    </p>
+
+                    <p class="year">
+                        2025 - 2028
+                    </p>
+
+                </div>
+
+
+                <div class="education-item">
+
+                    <h3>SMP</h3>
+
+                    <p>
+                        SMPN 12 CILEGON
+                    </p>
+
+                    <p class="year">
+                        2022 - 2025
+                    </p>
+
+                </div>
+
+
+                <div class="education-item">
+
+                    <h3>SD</h3>
+
+                    <p>
+                        SDN KRANGGOT
+                    </p>
+
+                    <p class="year">
+                        2016 - 2022
+                    </p>
+
+                </div>
+
+
+                <div class="education-item">
+
+                    <h3>TK</h3>
+
+                    <p>
+                        TK Negeri Istiqomah Kranggot
+                    </p>
+
+                    <p class="year">
+                        2014 - 2016
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- ================= SCREEN PENGALAMAN ============== -->
+    <!-- ================================================= -->
+
+    <section id="pengalaman" class="page">
+
+        <div class="main-container">
+
+            <h2 class="section-title">
+                📋 Pengalaman
+            </h2>
+
+            <div class="experience">
+
+                <div class="experience-card">
+
+                    <h3>
+                        🌐 Membuat Website Biodata
+                    </h3>
+
+                    <p>
+                        Membuat website biodata menggunakan
+                        HTML dan CSS dengan Visual Studio Code.
+                    </p>
+
+                </div>
+
+
+                <div class="experience-card">
+
+                    <h3>
+                        💻 Membuat Website Statis
+                    </h3>
+
+                    <p>
+                        Membuat website statis sederhana
+                        sebagai tugas sekolah.
+                    </p>
+
+                </div>
+
+
+                <div class="experience-card">
+
+                    <h3>
+                        📱 Membuat Aplikasi Sederhana
+                    </h3>
+
+                    <p>
+                        Belajar membuat aplikasi sederhana
+                        menggunakan komponen dan blok pemrograman.
+                    </p>
+
+                </div>
+
+
+                <div class="experience-card">
+
+                    <h3>
+                        🐍 Belajar Python
+                    </h3>
+
+                    <p>
+                        Mempelajari dasar Python dan
+                        penggunaan operator logika.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <h2 class="section-title">
+                🎯 Cita-Cita
+            </h2>
+
+            <div class="dream">
+
+                <div class="dream-icon">
+                    🌟
+                </div>
+
+                <p>
+
+                    Cita-cita saya adalah menjadi orang yang sukses,
+                    dapat membanggakan dan membahagiakan orang tua,
+                    serta menjadi seseorang yang selalu berbakti
+                    kepada orang tua dan mengutamakan mereka
+                    dalam kehidupan.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- ================= SCREEN KONTAK ================== -->
+    <!-- ================================================= -->
+
+    <section id="kontak" class="page">
+
+        <div class="main-container">
+
+            <h2 class="section-title">
+                📞 Kontak
+            </h2>
+
+            <div class="contact">
+
+                <div class="contact-card">
+
+                    <div class="icon">📧</div>
+
+                    <h3>Email</h3>
+
+                    <a href="mailto:deswintamaharani291@gmail.com">
+                        deswintamaharani291@gmail.com
+                    </a>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="icon">📱</div>
+
+                    <h3>WhatsApp</h3>
+
+                    <a
+                        href="https://wa.me/+6282117437719"
+                        target="_blank"
+                    >
+                        +62 821-1743-7719
+                    </a>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="icon">💻</div>
+
+                    <h3>GitHub</h3>
+
+                    <a
+                        href="https://github.com/"
+                        target="_blank"
+                    >
+                        https://github.com/deswintamaharani291-code/biodata-deswinta
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Deswinta Maharani | XI RPL 1
+        </p>
+
+        <p style="margin-top: 7px;">
+            Dibuat dengan ❤️ dan semangat belajar
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        /* ================= PINDAH SCREEN ================= */
+
+        function showPage(pageId) {
+
+            const pages = document.querySelectorAll(".page");
+
+            pages.forEach(function(page) {
+
+                page.classList.remove("active");
+
+            });
+
+            document
+                .getElementById(pageId)
+                .classList.add("active");
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+        /* ================= DARK MODE ================= */
+
+        function darkMode() {
+
+            document.body.classList.toggle("dark");
+
+            const button =
+                document.getElementById("darkButton");
+
+            if (
+                document.body.classList.contains("dark")
+            ) {
+
+                button.innerHTML = "☀️";
+
+            } else {
+
+                button.innerHTML = "🌙";
+
+            }
+
+        }
+
+    </script>
+
 
 </body>
 </html>
