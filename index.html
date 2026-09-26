@@ -1,0 +1,259 @@
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biodata Diri</title>
+  <style>
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px;
+    border: 3px solid white;
+}
+    
+    :root {
+      --primary-color: #1e3a8a;
+      --secondary-color: #3b82f6;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-color: #334155;
+      --border-color: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: var(--card-bg);
+      width: 100%;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    .header {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .header p {
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--secondary-color);
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+
+    .info-table td {
+      padding: 10px 8px;
+      vertical-align: top;
+      font-size: 0.95rem;
+    }
+
+    .info-table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .label {
+      font-weight: 600;
+      width: 35%;
+      color: #1e293b;
+    }
+
+    .separator {
+      width: 5%;
+      text-align: center;
+    }
+
+    .value {
+      width: 60%;
+    }
+
+    .education-list {
+      list-style: none;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .education-list::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      bottom: 5px;
+      width: 2px;
+      background-color: var(--secondary-color);
+    }
+
+    .education-item {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .education-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .education-item::before {
+      content: '';
+      position: absolute;
+      left: -25px;
+      top: 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+      border: 2px solid #ffffff;
+    }
+
+    .edu-level {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #0f172a;
+    }
+
+    .edu-name {
+      font-size: 0.95rem;
+      color: #475569;
+      margin-top: 2px;
+    }
+
+    .edu-years {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    .footer {
+      background-color: #f1f5f9;
+      padding: 15px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #64748b;
+      border-top: 1px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+    <img src="foto.jpeg" alt="Foto Profil" class="profile-img">
+
+    <h1>DESWINTA MAHARANI</h1>
+    <p>BIODATA DIRI</p>
+</div>
+
+    <div class="content">
+      <!-- Data Pribadi -->
+      <h2 class="section-title">Informasi Pribadi</h2>
+      <table class="info-table">
+        <tr>
+          <td class="label">Nama Lengkap</td>
+          <td class="separator">:</td>
+          <td class="value">Deswinta Maharani</td>
+        </tr>
+        <tr>
+          <td class="label">Tempat,Tgl lahir</td>
+          <td class="separator">:</td>
+          <td class="value">Karanganyar,12-Desember-2009</td>
+        </tr>
+        <tr>
+          <td class="label">Jenis Kelamin</td>
+          <td class="separator">:</td>
+          <td class="value">Perempuan</td>
+        </tr>
+        <tr>
+          <td class="label">Alamat Lengkap</td>
+          <td class="separator">:</td>
+          <td class="value">Link.Jabalintang</td>
+        </tr>
+        <tr>
+          <td class="label">Alamat E-mail</td>
+          <td class="separator">:</td>
+          <td class="value">deswintamaharani291@gmail.com</td>
+        </tr>
+        <tr>
+          <td class="label">No. Telepon / WA</td>
+          <td class="separator">:</td>
+          <td class="value">0821-1743-7719</td>
+        </tr>
+      </table>
+
+      <!-- Riwayat Pendidikan -->
+      <h2 class="section-title">Riwayat Pendidikan</h2>
+      <ul class="education-list">
+        <li class="education-item">
+          <div class="edu-level">SMK (Sekolah Menengah Kejuruan)</div>
+          <div class="edu-name">SMKN 1 CILEGON - Rekayasa perangkat lunak</div>
+          <div class="edu-years">2025 - 2028</div>
+        </li>
+        <li class="education-item">
+          <div class="edu-level">SMP (Sekolah Menengah Pertama)</div>
+          <div class="edu-name">SMPN 12 CILEGON</div>
+          <div class="edu-years">2022 - 2025</div>
+        </li>
+        <li class="education-item">
+          <div class="edu-level">SD (Sekolah Dasar)</div>
+          <div class="edu-name">SDN KRANGGOT</div>
+          <div class="edu-years">2016-2022</div>
+        </li>
+        <li class="education-item">
+          <div class="edu-level">TK (Taman Kanak-kanak)</div>
+          <div class="edu-name">TK NEGRI ISTIQOMAH KRANGGOT</div>
+          <div class="edu-years">2014 - 2016</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer">
+    </div>
+  </div>
+
+</body>
+</html>
